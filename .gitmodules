@@ -21,7 +21,7 @@
 	url = https://github.com/mumble-voip/rnnoise.git
 [submodule "themes/Mumble"]
 	path = themes/Mumble
-	url = https://github.com/mumble-voip/mumble-theme.git
+	url = https://github.com/ganjingdemo/mumble-theme.git
 [submodule "3rdparty/FindPythonInterpreter"]
 	path = 3rdparty/FindPythonInterpreter
 	url = https://github.com/Krzmbrzl/FindPythonInterpreter.git
