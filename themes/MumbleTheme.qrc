@@ -82,6 +82,7 @@
     <file alias="controls/radio_check_lite.svg">Mumble/controls/radio_check_lite.svg</file>
     <file alias="controls/toolbar_ext.svg">Mumble/controls/toolbar_ext.svg</file>
     <file alias="emblems/emblem-favorite.svg">Mumble/emblems/emblem-favorite.svg</file>
+    <file alias="emblems/emblem-favorite.svg">Mumble/emblems/emblem-blank.svg</file>	
     <file alias="exported/config_asio.svg">Mumble/exported/config_asio.svg</file>
     <file alias="exported/config_audio_input.svg">Mumble/exported/config_audio_input.svg</file>
     <file alias="exported/config_audio_output.svg">Mumble/exported/config_audio_output.svg</file>

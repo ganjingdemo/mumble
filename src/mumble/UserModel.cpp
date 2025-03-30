@@ -252,6 +252,7 @@ UserModel::UserModel(QObject *p) : QAbstractItemModel(p) {
 	qiActiveChannel   = QIcon(QLatin1String("skin:channel_active.svg"));
 	qiLinkedChannel   = QIcon(QLatin1String("skin:channel_linked.svg"));
 	qiFriend          = QIcon(QLatin1String("skin:emblems/emblem-favorite.svg"));
+	qiBlank          = QIcon(QLatin1String("skin:emblems/emblem-blank.svg"));	
 	qiComment         = QIcon(QLatin1String("skin:comment.svg"));
 	qiCommentSeen     = QIcon(QLatin1String("skin:comment_seen.svg"));
 	qiFilter          = QIcon(QLatin1String("skin:filter.svg"));
@@ -513,6 +514,15 @@ QVariant UserModel::data(const QModelIndex &idx, int role) const {
 					l << qiAuthenticated;
 				if (!p->qsFriendName.isEmpty() && !item->isListener)
 					l << qiFriend;
+
+				//
+				// add a blank icon to fix the bug of missing last icon in some MacOS
+				//
+				if(QFile::exists("add_blank_icon.cfg"))
+				{
+					l << qiBlank;
+				}
+
 				return l;
 			default:
 				break;

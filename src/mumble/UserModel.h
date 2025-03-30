@@ -75,6 +75,7 @@ protected:
 	QIcon qiDeafenedSelf, qiDeafenedServer;
 	QIcon qiAuthenticated, qiChannel, qiLinkedChannel, qiActiveChannel;
 	QIcon qiFriend;
+	QIcon qiBlank;	
 	QIcon qiComment, qiCommentSeen, qiFilter;
 	QIcon qiLock_locked, qiLock_unlocked;
 	QIcon qiEar;
