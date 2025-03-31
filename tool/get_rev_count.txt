@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/677436/how-do-i-get-the-git-commit-count
+
+git rev-list --count HEAD
