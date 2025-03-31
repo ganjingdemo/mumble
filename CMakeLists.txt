@@ -31,7 +31,7 @@ endif()
 string(TIMESTAMP MUMBLE_BUILD_YEAR "%Y")
 
 project(Mumble
-	VERSION "1.4.9670"
+	VERSION "1.4.9672"
 	DESCRIPTION "Open source, low-latency, high quality voice chat."
 	HOMEPAGE_URL "https://www.mumble.info"
 	LANGUAGES "C" "CXX"
