@@ -27,6 +27,8 @@
 #include <QtWidgets/QMessageBox>
 #include <QtWidgets/QToolTip>
 #include <QtWidgets/QWhatsThis>
+#include <QtCore/QTextCodec>
+
 
 QHash< const Channel *, ModelItem * > ModelItem::c_qhChannels;
 QHash< const ClientUser *, ModelItem * > ModelItem::c_qhUsers;
@@ -428,6 +430,7 @@ QVariant UserModel::data(const QModelIndex &idx, int role) const {
 		return v;
 
 	QList< QVariant > l;
+	
 
 	if (p) {
 		switch (role) {
@@ -518,12 +521,23 @@ QVariant UserModel::data(const QModelIndex &idx, int role) const {
 				//
 				// add a blank icon to fix the bug of missing last icon in some MacOS
 				//
-				if(QFile::exists("add_blank_icon.cfg"))
+				// https://stackoverflow.com/questions/14131127/qbytearray-to-qstring
+				//
+				// (1015 is UTF-16, 1014 UTF-16LE, 1013 UTF-16BE, 106 UTF-8)
+				//
 				{
-					l << qiBlank;
+					QByteArray env_value = qgetenv("MUMBLE_ADD_BLANK_ICON");
+					
+					QString add_blank_icon_flag = QTextCodec::codecForMib(106)->toUnicode(env_value);
+
+					if(add_blank_icon_flag != "false")
+					{
+						l << qiBlank;
+					}
 				}
 
 				return l;
+
 			default:
 				break;
 		}
